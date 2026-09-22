@@ -357,7 +357,7 @@ def dispatch_tool(tool_name, args):
 #Welcome message
 console.print(
     Align.center(
-        """
+        r"""
  _____  _____ _____  _    ___ _   _ 
 |  __ \| ____|_   _| / \  |_ _| \ | |
 | |__) |  _|   | |  / _ \  | ||  \| |

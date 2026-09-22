@@ -23,13 +23,13 @@ def apply_decay():
 
         if new_confidence < ARCHIVE_THRESHOLD: #i.e.. less than 5%
             archive(mem["id"])
-        else: 
+        else:
             update_confidence(mem["id"], new_confidence)
 
 def reinforce(memory_id, current_confidence, current_decay_rate):
     #Talking about used memory
     #min(1.0) to cap the value within 1 that is like 100%
-    #max(MIN_DECAY_RATE) -> 0.02 -> when we use that memory deacy gets boost of 10% so less chance of getting achived  
+    #max(MIN_DECAY_RATE) -> 0.02 -> when we use that memory deacy gets boost of 10% so less chance of getting achived
     new_confidence = min(1.0, current_confidence + REINFORCE_BOOST)
     new_decay_rate = max(MIN_DECAY_RATE, current_decay_rate * 0.9)
     update_confidence(memory_id, new_confidence, new_decay_rate)

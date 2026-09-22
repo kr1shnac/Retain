@@ -8,7 +8,7 @@ def score_complexity(query):
     score = 0
     words = query.split()
 
-    #signal 1 -> query length 
+    #signal 1 -> query length
     word_count = len(words)
 
     if word_count > 50:
@@ -17,7 +17,7 @@ def score_complexity(query):
         score += 2
     elif word_count > 10:
         score += 1
-    
+
     #signal 2 -> technical keywords
     matches = sum(
         1 for w in words

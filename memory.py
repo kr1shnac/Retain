@@ -17,7 +17,7 @@ class Memory:
 
     def add(self, text, memory_type="fact"):
         return insert_memory(text, memory_type)
-    
+
     def search(self, query, top_k=5):
         ranked = rank(query, get_active())
 
@@ -35,8 +35,8 @@ class Memory:
                 mem["confidence_score"],
                 mem["decay_rate"]
             )
-        
-        return results 
+
+        return results
 
     def get_all(self):
         return get_active()

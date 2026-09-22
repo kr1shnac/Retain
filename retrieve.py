@@ -48,7 +48,7 @@ print("TF:", term_frequency(words))
 def document_frequency(memories):
     frequencies = {}
 
-    for memory in memories: #pick one memory in collection of memories 
+    for memory in memories: #pick one memory in collection of memories
         words = tokenize(memory["text"])
         unique_words = set(words) #remove duplicate words from memory
 
@@ -57,7 +57,7 @@ def document_frequency(memories):
                 frequencies[word] += 1
             else:
                 frequencies[word] = 1
-            
+
     return frequencies
 
 
@@ -104,7 +104,7 @@ def cosine_similarity(vector_a, vector_b):
         return 0
 
     return dot_product / (magnitude_a * magnitude_b)
-    
+
 
 def rank(query, memories):
     idf = inverse_document_frequency(memories)
